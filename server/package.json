@@ -10,7 +10,9 @@
     "build": "npx tsc && cp -a assets/ dist/server/assets/",
     "start": "node dist/server/src",
     "dev": "WOLEET_ID_SERVER_PRODUCTION=false DEBUG=id* npx ts-node-dev src/index.ts",
-    "test": "WOLEET_ID_SERVER_PRODUCTION=false npx mocha --require ts-node/register test/*.ts --exit --timeout 10000"
+    "test": "WOLEET_ID_SERVER_PRODUCTION=false npx mocha --require ts-node/register test/*.ts --exit --timeout 10000",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "keywords": [],
   "author": "",
@@ -60,6 +62,8 @@
     "read": "^1.0.7",
     "rxjs": "^6.5.2",
     "sequelize": "^4.44.0",
-    "timestring": "^6.0.0"
-  }
+    "timestring": "^6.0.0",
+    "snyk": "^1.316.1"
+  },
+  "snyk": true
 }
